@@ -34,7 +34,7 @@ clean:
 	@docker ps -a |grep $(IMGNAME) |cut -f 1 -d' '|xargs -P1 -i docker rm {}
 	@docker rmi $(IMGNAME):$(VERSION)
 taglatest:
-	docker tag $(IMGNAME):$(VERSION) $(IMGNAME):lastest
+	docker tag $(IMGNAME):$(VERSION) $(IMGNAME):latest
 	docker tag $(IMGNAME):$(VERSION) $(USER)/$(IMGNAME):$(VERSION)
 	docker tag $(IMGNAME):$(VERSION) $(USER)/$(IMGNAME):latest
 push:
